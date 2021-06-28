@@ -45,7 +45,7 @@ export interface YouTubeOptions {
  * The YouTube media source. Pass this function to `uw.source()`.
  */
 export default function youTubeSource(uw: unknown, opts: YouTubeOptions): MediaSource {
-  if (!opts || !opts.key) {
+  if (opts && !opts.key) {
     throw new TypeError('Expected a YouTube API key in "options.key". For information on how to '
       + 'configure your YouTube API access, see '
       + 'https://developers.google.com/youtube/v3/getting-started.');
